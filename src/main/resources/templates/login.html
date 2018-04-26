@@ -1,0 +1,24 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="index :: head"></head>
+
+<body class="text-center">
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <form class="form-signin mt-5" method="post" th:action="@{~/login}">
+                <h1 class="h3 mb-3 font-weight-normal" th:text="#{enter}"></h1>
+                <label for="inputEmail" class="sr-only" th:text="#{email}"></label>
+                <input type="email" id="inputEmail" class="form-control" name="username" placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only" th:text="#{password}"></label>
+                <input type="password" id="inputPassword" name="password" class="form-control mt-1" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block mt-1" type="submit" th:text="#{enter}"></button>
+            </form>
+            <a th:href="@{~/login/registration}" class="btn btn-info btn-block mt-2" th:text="#{registration}"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

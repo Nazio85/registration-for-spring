@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Пример на bootstrap 4: Пользовательская форма и дизайн для простой формы входа.">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../../../favicon.ico">-->
+
+    <title th:text="#{pageToEnter}"></title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{~/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{~/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<nav class="nav mt-2 justify-content-end" th:fragment="topMenu">
+    <a th:href="@{~/}" class="btn btn-outline-info mr-5 ml-1" th:text="#{home}"></a>
+    <a th:if="${user == null}" th:href="@{~/login}" class="btn btn-outline-info mr-1 ml-1" th:text="#{enter}"></a>
+    <a th:if="${user == null}" href="#" th:disabled="true" th:text="#{userPanel}" class="btn btn-outline-info disabled mr-1 ml-1" ></a>
+    <a th:unless="${user == null}" th:href="@{~/user}" th:text="#{userPanel}" class="btn btn-outline-info mr-1 ml-1" ></a>
+    <a th:unless="${user == null}" th:href="@{~/logout}" th:text="#{exit}" class="btn btn-outline-info mr-1 ml-1" ></a>
+</nav>
+</body>
+</html>
